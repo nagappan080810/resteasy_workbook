@@ -11,6 +11,7 @@ public class Product {
     private String name;
     private Integer availableQty;
     private String brand;
+    private String desc;
     @XmlTransient
     private Date modifiedDate;
 

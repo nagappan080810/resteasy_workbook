@@ -43,7 +43,7 @@ public class EmployeeService {
     @GET
     @Path("/")
     @GZIP
-    @Produces("application/xml")
+    @Produces({MediaType.APPLICATION_JSON})
     @PermitAll
     public EmployeeService getServiceInfo() {
         return new EmployeeService();
