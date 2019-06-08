@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.StringTokenizer;
 
 @Provider
-//@Priority(2000)
+@Priority(2000)
 public class SecurityFilter implements ContainerRequestFilter {
     private static final ServerResponse ACCESS_FORBIDDEN = new ServerResponse("NOBODY CAN ACCESS", 403, new Headers<>());
     private static final ServerResponse ACCESS_DENIED = new ServerResponse("Authorization header missing/invalid or Role Not valid", 401, new Headers<>());

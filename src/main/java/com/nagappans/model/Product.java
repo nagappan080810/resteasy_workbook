@@ -6,10 +6,10 @@ import java.util.Date;
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Product {
-    @XmlAttribute
+    @XmlElement
     private Integer id;
     private String name;
-    private Integer availableQty;
+    private Integer qty;
     private String brand;
     private String desc;
     @XmlTransient
@@ -19,18 +19,19 @@ public class Product {
         this.modifiedDate = new Date();
     }
 
-    public Product(Integer id, String name, Integer availableQty, String brand) {
+    public Product(Integer id, String name, Integer availableQty, String brand, String desc) {
         this.id = id;
         this.name = name;
-        this.availableQty = availableQty;
+        this.qty = availableQty;
         this.brand = brand;
+        this.desc = desc;
         this.modifiedDate = new Date();
     }
 
     public Product(Integer id, Product product) {
         this.id = id;
         this.name = product.getName();
-        this.availableQty = product.getAvailableQty();
+        this.qty = product.getQty();
         this.brand = product.getBrand();
         this.modifiedDate = new Date();
     }
@@ -51,12 +52,12 @@ public class Product {
         this.name = name;
     }
 
-    public int getAvailableQty() {
-        return availableQty;
+    public int getQty() {
+        return qty;
     }
 
-    public void setAvailableQty(Integer availableQty) {
-        this.availableQty = availableQty;
+    public void setQty(Integer qty) {
+        this.qty = qty;
     }
 
     public String getBrand() {
